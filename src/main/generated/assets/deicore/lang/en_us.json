@@ -1,0 +1,13 @@
+{
+  "deicore.api.mod_check.command": "Deicore version 1.0.0-SNAPSHOT",
+  "deicore.command.deicore": "§cCannot use the command 'deicore' alone, please add a sub - command and try again!",
+  "deicore.command.world_var.add_success": "Successfully added %d to WorldVar '%s', the new value is %d",
+  "deicore.command.world_var.format_error": "§cWorldVar format error!",
+  "deicore.command.world_var.get_success": "The value of WorldVar '%s' is %d",
+  "deicore.command.world_var.new_success": "Successfully created WorldVar '%s' with initial value %d",
+  "deicore.command.world_var.not_found": "§cWorldVar not found: ",
+  "deicore.command.world_var.remove_success": "Successfully deleted WorldVar '%s'",
+  "deicore.command.world_var.set_success": "Successfully set WorldVar '%s' to %d",
+  "deicore.command.world_var.subtract_success": "Successfully subtracted %d from WorldVar '%s', the new value is %d",
+  "deicore.command.world_var.unknown_error": "§cUnknown error occurred with WorldVar!"
+}
