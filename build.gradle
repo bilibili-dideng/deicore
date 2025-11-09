@@ -98,10 +98,15 @@ publishing {
 
     // See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
     repositories {
-        // Add repositories to publish to here.
-        // Notice: This block does NOT have the same function as the block in the top level.
-        // The repositories here will be used for publishing your artifact, not for
-        // retrieving dependencies.
+        // GitHub Packages 发布仓库
+        maven {
+            name = "GitHubPackages"
+            url = "https://maven.pkg.github.com/bilibili-dideng/deicore"
+            credentials {
+                username = project.findProperty("gpr.user") ?: System.getenv("GITHUB_ACTOR")
+                password = project.findProperty("gpr.token") ?: System.getenv("GITHUB_TOKEN")
+            }
+        }
         
         // 本地 Maven 仓库（用于测试）
         maven {

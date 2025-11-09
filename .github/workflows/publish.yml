@@ -20,6 +20,10 @@ jobs:
       with:
         java-version: '21'
         distribution: 'temurin'
+        # 配置 GitHub Packages 仓库
+        server-id: github
+        server-username: GITHUB_ACTOR
+        server-password: GITHUB_TOKEN
     
     - name: Validate Gradle Wrapper
       uses: gradle/wrapper-validation-action@v1
