@@ -103,17 +103,6 @@ publishing {
         // The repositories here will be used for publishing your artifact, not for
         // retrieving dependencies.
         
-        // GitHub Packages 仓库（推荐方案）
-        // 其他开发者可以方便地将您的模组作为依赖
-        maven {
-            name = "GitHubPackages"
-            url = "https://maven.pkg.github.com/bilibili-dideng/deicore"
-            credentials {
-                username = project.findProperty("gpr.user") ?: System.getenv("GITHUB_ACTOR") ?: ""
-                password = project.findProperty("gpr.token") ?: System.getenv("GITHUB_TOKEN") ?: ""
-            }
-        }
-        
         // 本地 Maven 仓库（用于测试）
         maven {
             name = "local"
