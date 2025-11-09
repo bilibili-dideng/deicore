@@ -21,8 +21,6 @@ public class DeicoreRecipesProvider extends FabricRecipeProvider {
 
     @Override
     public void generate(RecipeExporter exporter) {
-    }
-    public static void register() {
 
     }
 }

@@ -1,7 +1,7 @@
 package org.dideng.com.deicore.client.api.mod_check;
 
-import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
-import net.minecraft.server.command.CommandManager;
+import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.text.Text;
 
 public class ModCheck {
@@ -14,16 +14,16 @@ public class ModCheck {
     }
 
     public void init() {
-        registry_check_command(this.translatable_key, this.Mod_ID);
-    }
-    public static void registry_check_command(String translatable_key, String Mod_ID) {
-        CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
-            dispatcher.register(CommandManager.literal(Mod_ID)
-                    .then(CommandManager.literal("check").executes(context -> {
-                        context.getSource().sendFeedback(() -> Text.translatable(translatable_key), false);
-                        return 10;
-                    }))
-            );
+        // 在客户端环境中，使用客户端事件来显示信息
+        ClientTickEvents.START_CLIENT_TICK.register(client -> {
         });
+    }
+    
+    // 客户端版本的方法，用于在客户端显示信息
+    public static void showClientMessage(String message) {
+        MinecraftClient client = MinecraftClient.getInstance();
+        if (client.player != null) {
+            client.player.sendMessage(Text.literal(message), false);
+        }
     }
 }

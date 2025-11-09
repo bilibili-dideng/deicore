@@ -9,7 +9,6 @@ public class DeicoreDataGenerator implements DataGeneratorEntrypoint {
     @Override
     public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
         FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
-        pack.addProvider(DeicoreRecipesProvider::new);
         pack.addProvider(DeicoreEn_UsLangProvider::new);
         pack.addProvider(DeicoreZhCnLangProvider::new);
     }

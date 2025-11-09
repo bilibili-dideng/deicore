@@ -25,5 +25,22 @@ public class DeicoreEn_UsLangProvider extends FabricLanguageProvider {
         translationBuilder.add("deicore.command.world_var.set_success", "Successfully set WorldVar '%s' to %d");
         translationBuilder.add("deicore.command.world_var.remove_success", "Successfully deleted WorldVar '%s'");
         translationBuilder.add("deicore.command.world_var.subtract_success", "Successfully subtracted %d from WorldVar '%s', the new value is %d");
+        
+        // Multi-type command translations
+        translationBuilder.add("deicore.command.world_var.invalid_type", "§cInvalid WorldVar type: %s");
+        translationBuilder.add("deicore.command.world_var.type_mismatch", "§cType mismatch: expected %s, but got value '%s'");
+        translationBuilder.add("deicore.command.world_var.type_mismatch_existing", "§cType mismatch: expected %s, but existing variable is type %s");
+        translationBuilder.add("deicore.command.world_var.typed_new_success", "Successfully created %s WorldVar '%s' with value '%s'");
+        translationBuilder.add("deicore.command.world_var.typed_get_success", "WorldVar '%s' (%s) has value: %s");
+        translationBuilder.add("deicore.command.world_var.typed_set_success", "Successfully set %s WorldVar '%s' to value '%s'");
+        translationBuilder.add("deicore.command.world_var.typed_remove_success", "Successfully deleted %s WorldVar '%s'");
+        translationBuilder.add("deicore.command.world_var.duplicate_name", "§cWorldVar name '%s' already exists!");
+        
+        // Hash command translations
+        translationBuilder.add("deicore.command.hash.hash_value", "Hash value: %d");
+        translationBuilder.add("deicore.command.hash.copy_tooltip", "Click to copy hash value");
+        translationBuilder.add("deicore.command.hash.decrypt_result", "Original string: %s");
+        translationBuilder.add("deicore.command.hash.decrypt_success", "Found original string for hash %d: %s");
+        translationBuilder.add("deicore.command.hash.decrypt_not_found", "No string found for hash value: %d");
     }
 }

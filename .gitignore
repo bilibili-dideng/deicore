@@ -5,4 +5,13 @@
 /build/classes/java/main/
 run
 .idea
-.gitignore
+.trae
+.github
+
+# 本地配置文件 - 包含敏感信息
+gradle-local.properties
+local.properties
+
+# 环境文件
+.env
+.env.local
