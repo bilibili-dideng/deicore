@@ -3,7 +3,8 @@ plugins {
     id 'maven-publish'
 }
 
-version = project.mod_version
+// 优先使用命令行传递的版本参数（如JitPack构建时），否则使用gradle.properties中的版本
+version = project.hasProperty('version') ? project.version : project.mod_version
 
 // Ensure publishToMavenLocal task exists for JitPack
 if (!tasks.findByName('publishToMavenLocal')) {
