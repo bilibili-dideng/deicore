@@ -9,7 +9,7 @@ import static org.dideng.com.deicore.command.WorldVar.WorldVarConfigManager.load
 public class Deicore implements ModInitializer {
     public static final String MOD_ID = "deicore";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
-    public static final String MOD_VERSION = "1.0.0-SNAPSHOT";
+    public static final String MOD_VERSION = "1.0.0";
     @Override
     public void onInitialize() {
         // ModCheck initialization moved to client entrypoint to avoid client-side class loading issues
