@@ -1,0 +1,5 @@
+jdk:
+  - openjdk21
+gradle:
+  version: wrapper
+  wrapperVersion: 9.1.0

@@ -4,6 +4,16 @@ plugins {
 }
 
 version = project.mod_version
+
+// Ensure publishToMavenLocal task exists for JitPack
+if (!tasks.findByName('publishToMavenLocal')) {
+    tasks.register('publishToMavenLocal') {
+        dependsOn('build')
+        doLast {
+            println 'publishToMavenLocal task executed'
+        }
+    }
+}
 group = project.maven_group
 
 base {
@@ -83,7 +93,7 @@ java {
 
 jar {
     from("LICENSE") {
-        rename { "${it}_${project.archivesBaseName}" }
+        rename { "${it}_${project.archives_base_name}" }
     }
 }
 
@@ -93,6 +103,34 @@ publishing {
         create("mavenJava", MavenPublication) {
             artifactId = project.archives_base_name
             from components.java
+            
+            // Add pom information for JitPack
+            pom {
+                name = project.archives_base_name
+                description = "A core library for Minecraft Fabric modding"
+                url = "https://github.com/bilibili-dideng/deicore"
+                
+                licenses {
+                    license {
+                        name = "MIT"
+                        url = "https://github.com/bilibili-dideng/deicore/blob/main/LICENSE"
+                    }
+                }
+                
+                developers {
+                    developer {
+                        id = "dideng"
+                        name = "Dideng"
+                        email = "dideng@bilibili.com"
+                    }
+                }
+                
+                scm {
+                    connection = "scm:git:https://github.com/bilibili-dideng/deicore.git"
+                    developerConnection = "scm:git:https://github.com/bilibili-dideng/deicore.git"
+                    url = "https://github.com/bilibili-dideng/deicore"
+                }
+            }
         }
     }
 
